@@ -1,4 +1,4 @@
-##A visual reference for Pyplot API
+ ## A visual reference for Pyplot API
 
 You know that thing where you're sure there is a command for this or
 that in Pyplot, but its name just slips from your head? This repository
