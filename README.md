@@ -4,7 +4,7 @@ You know that thing where you're sure there is a command for this or
 that in Pyplot, but its name just slips from your head? This repository
  provides a handy image with most commonly
  used functions. Obviously, it's made in Pyplot itself. It is not (and
- isn't intended to be) a comprehensive API documentation; it's just here
+ isn't intended to be) a comprehensive API documentation; it's just
  to prevent some googling and/or scrolling through `plt.__dir__()` every
  five seconds.
 

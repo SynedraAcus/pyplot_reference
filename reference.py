@@ -3,22 +3,26 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+#  The left half of the image shows the stuff you'll usually want on your axes
+#  Plots themselves, various highlights, annotations, arrows, titles and so on.
+
+plt.figure(figsize=(8.27, 11.69), dpi=300)
+plt.xkcd()  # XKCD mode seems to break some stuff (see below), but it looks cool
 x = np.arange(0, 5, 0.1)
 sin = np.sin(x)
 cos = np.cos(x)
-
-plt.figure(figsize=(8.27, 11.69), dpi=300)
-plt.xkcd()
 plt.plot(x, np.sin(x), label='sin x')
 plt.plot(x, np.cos(x), label='cos x')
 
-#  Axes, titles and so on
-plt.legend()
+#  Axes, titles and so on.
 plt.suptitle('plt.suptitle(\'Figure with many plots\')')
 plt.title('plt.title(\'Plot name\')')
 plt.xlabel('plt.xlabel(\'X is this\')')
 plt.ylabel('plt.ylabel(\'Y is that\')')
-# plt.minorticks_on() # Doesn't work in XKCD mode? As does plt.grid, I guess? Smth to do with the colour gray?
+plt.legend() #  Gets filled automatically with plots' `label` properties
+#  plt.minorticks_on() # Doesn't work in XKCD mode?
+#  As does plt.grid, I guess? Smth to do with the colour gray?
+
 #  Blocks and lines
 plt.axvspan(3.2, 4)
 plt.axhspan(0.5, 0.7)
@@ -32,12 +36,14 @@ plt.annotate('plt.annotate(label, (x,y))', (0, -0.55))
 plt.annotate('OR: plt.text(x, y, label)', (0, -0.6))
 plt.annotate('(Note with an arrow)', (2, -0.66), (0, -0.67),
              arrowprops={'arrowstyle': '->'})
-plt.annotate('plt.annotate((x, y), (text_x, text_y))', (0, -0.72))
+plt.annotate('plt.annotate(label, (x, y), (text_x, text_y))', (0, -0.72))
 plt.annotate('(Arrow without a note)', (0, -0.85))
 plt.annotate('plt.arrow(start_x, start_y, xlen, ylen)', (0, -0.9))
 plt.arrow(0, -0.8, 1.3, 0.02,
           width=0.002, head_width=0.01, head_length=0.02)
+
 #  Annotations for other elements
+#  Annotations kept separate from elements themselves to make code a bit cleaner
 plt.annotate('plt.axhspan(ymin, ymax)', (0.3, 0.65))
 plt.annotate('plt.axhline(x)', (0.7, 0.77))
 plt.annotate('plt.axvspan(xmin, xmax)', (2.25, 0.95))
@@ -51,5 +57,11 @@ plt.annotate('plt.plot(x, np.sin(x), label=\'sin x\')', (2, 0.55),
              rotation=290)
 plt.annotate('plt.plot(x, np.cos(x), label=\'cos x\')', (1.4, 0.4),
              rotation=290)
+plt.annotate('plt.box(True)', (5.15, 0.3), (3.7, 0.3),
+             arrowprops={'arrowstyle': '->'})
 #  Finishing
 plt.savefig('reference.svg')
+
+#  Second part of the picture shows the most basic types of the plots
+#  Plots chosen just because I actually use those and assume they are more or
+#  less common. There are more exotic plot types in pyplot
