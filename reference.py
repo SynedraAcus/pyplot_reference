@@ -3,9 +3,24 @@
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 import numpy as np
+from argparse import ArgumentParser
 from functools import partial
 
-plt.figure(figsize=(16.54, 11.69), dpi=300)
+parser = ArgumentParser(description='Pyplot API reference')
+parser.add_argument('--format', type=str, default='svg',
+                    help='Image file format extension. Default svg')
+args = parser.parse_args()
+
+filetypes = plt.gcf().canvas.get_supported_filetypes()
+if args.format not in filetypes.keys():
+    print('Format \"{0}\" not supported. Available formats are:'.format(
+        args.format))
+    for x in sorted(filetypes.keys()):
+        print ('{0}\t({1})'.format(x, filetypes[x]))
+    quit()
+
+
+plt.figure(figsize=(16.53, 11.59), dpi=300)
 plt.xkcd()  # XKCD mode seems to break some stuff (see below), but it looks cool
 plt.subplots_adjust(left=0.07, right=0.95, top=0.9, bottom=0.07)
 
@@ -162,5 +177,4 @@ plt.scatter(x, np.sin(x))
 plt.title('plt.scatter(x, y)')
 
 #  Finishing
-print(plt.gcf().canvas.get_supported_filetypes())
-plt.savefig('reference.svg')
+plt.savefig('reference.{}'.format(args.format))
