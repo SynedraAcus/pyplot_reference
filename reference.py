@@ -53,19 +53,19 @@ plt.axhline(0.75)
 plt.axvline(3.1)
 
 #  Annotations block
-plt.annotate('Annotations', (0, -0.4))
-plt.annotate('(Note without an arrow)', (0, -0.5))
-plt.annotate('plt.annotate(label, (x,y))', (0, -0.55))
-plt.annotate('OR: plt.text(x, y, label)', (0, -0.6))
-plt.annotate('(Note with an arrow)', (2, -0.66), (0, -0.67),
+plt.annotate('Annotations', (0.1, -0.42))
+plt.annotate('(Note without an arrow)', (0.1, -0.5))
+plt.annotate('plt.annotate(label, (x,y))', (0.1, -0.55))
+plt.annotate('OR: plt.text(x, y, label)', (0.1, -0.6))
+plt.annotate('(Note with an arrow)', (2, -0.66), (0.1, -0.67),
              arrowprops={'arrowstyle': '->'})
-plt.annotate('plt.annotate(label, (x, y), (text_x, text_y))', (0, -0.72))
-plt.annotate('(Arrow without a note)', (0, -0.85))
-plt.annotate('plt.arrow(start_x, start_y, xlen, ylen)', (0, -0.9))
+plt.annotate('plt.annotate(label, (x, y), (text_x, text_y))', (0.1, -0.72))
+plt.annotate('(Arrow without a note)', (0.1, -0.85))
+plt.annotate('plt.arrow(start_x, start_y, xlen, ylen)', (0.1, -0.9))
 plt.arrow(0, -0.8, 1.3, 0.02,
           width=0.002, head_width=0.01, head_length=0.02)
 plt.figtext(0.83, 0.17, '(Text outside axes)')
-plt.figtext(0.82, 0.13, 'plt.figtext(x, y, label)')
+plt.figtext(0.83, 0.13, 'plt.figtext(x, y, label)')
 #  Figure could be added outside the axes using plt.figimage
 
 #  Annotations for other elements
@@ -150,7 +150,7 @@ single_subplot((2, 3))
 plt.tick_params(axis='both', which='both', bottom=False, left=False,
                 labelbottom=False, labelleft=False)
 plt.fill_between(x, np.sin(x))
-plt.title('plt.fill_between(x, sin(x)')
+plt.title('plt.fill_between(x, sin(x))')
 #  Hist
 single_subplot((2, 4))
 plt.tick_params(axis='both', which='both', bottom=False, left=False,

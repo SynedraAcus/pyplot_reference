@@ -12,11 +12,10 @@ that in Pyplot, but its name just slips from your head? This repository
 
  Run the script to get the image.
 
- `python3 ./reference.py --format svg --size a3`
+ `python3 ./reference.py --format svg`
 
- Only A* pages from A0 to A5 are supported; for
- raster file formats the dpi is set to 300.
- Available file formats depend on the installation.
+  Available file formats depend on the installation. For raster file
+  formats the dpi is set to 300.
 
  Tested in Python3.4 and higher.
 
